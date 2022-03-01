@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import RegisterUser from './components/registerUser/registerUser'
+import React from 'react'
+import UserList from './views/userList/userList'
+import Search from './components/searchComponent/search'
+import SaveInformation from './components/saveInformation/saveInformation'
+import { Route } from 'react-router-dom'
+import { SnackbarProvider } from 'notistack'
 
 function App() {
   return (
+    <SnackbarProvider
+      maxSnack={1}
+      autoHideDuration={3000}
+    >
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Search />
+      <UserList />
+      <SaveInformation />
     </div>
-  );
+    </SnackbarProvider>
+  )
 }
 
-export default App;
+export default App
